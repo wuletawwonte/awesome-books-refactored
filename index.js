@@ -1,37 +1,25 @@
 import Books from './modules/books.js';
 import reload from './modules/reload.js';
+import navigateTo from './modules/navigate.js';
+import addBook from './modules/addbook.js';
 
-const booksContainer = document.getElementById('books-container');
 const addBookForm = document.getElementById('add-book');
-const title = document.getElementById('title');
-const author = document.getElementById('author');
-const sections = document.querySelectorAll('.section');
 
 const allBooks = new Books();
 
-
-reload(allBooks, booksContainer);
+reload(allBooks);
 
 addBookForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  const newBook = {
-    title: title.value,
-    author: author.value,
-  };
-  allBooks.addBook(newBook);
-  title.value = '';
-  author.value = '';
-  reload(allBooks, booksContainer);
+  addBook(allBooks);
+  reload(allBooks);
 });
 
 const removeBook = (bookIndex) => {
   allBooks.removeBook(bookIndex);
-  reload();
+  reload(allBooks);
 };
 
-const navigateTo = (className) => {
-  sections.forEach(item => item.classList.contains(className) ? item.classList.add('active') : item.classList.remove('active'));
-}
 
 document.querySelector('.date').innerHTML = Date();
 
@@ -46,5 +34,7 @@ menuItems.forEach(menuItem => {
 const removeBookBtns = document.querySelectorAll('.remove-book');
 
 removeBookBtns.forEach(removeBookBtn => {
-  
+  removeBookBtn.addEventListener('click', ()=>{
+    removeBook(removeBookBtn.dataset.bookid);
+  });
 });

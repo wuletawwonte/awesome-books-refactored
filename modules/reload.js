@@ -1,11 +1,13 @@
-const reload = (allBooks, booksContainer) => {
+const booksContainer = document.getElementById('books-container');
+
+const reload = (allBooks) => {
   booksContainer.innerHTML = allBooks.books
     .map(
       (
         bookItem,
         index,
       ) => `<div class="book-item"><p><strong>"${bookItem.title}" by ${bookItem.author}.</strong></p>
-      <button class="remove-book" data-bookid="${index}">Remove</button>
+      <button class="remove-book" data-bookid=${index}>Remove</button>
       </div>`,
     )
     .join('');
