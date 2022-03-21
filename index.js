@@ -2,8 +2,12 @@ import Books from './modules/books.js';
 import reload from './modules/reload.js';
 import navigateTo from './modules/navigate.js';
 import addBook from './modules/addbook.js';
+import { DateTime } from './modules/luxon.js';
 
 const addBookForm = document.getElementById('add-book');
+const removeBookBtns = document.querySelectorAll('.remove-book');
+const menuItems = document.querySelectorAll('.menu-item');
+const dateContainer = document.querySelector('.date');
 
 const allBooks = new Books();
 
@@ -20,18 +24,18 @@ const removeBook = (bookIndex) => {
   reload(allBooks);
 };
 
+const loadDate = () => {
+  let now = DateTime.now();
+  dateContainer.innerHTML = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+}
 
-document.querySelector('.date').innerHTML = Date();
-
-const menuItems = document.querySelectorAll('.menu-item');
+loadDate();
 
 menuItems.forEach(menuItem => {
   menuItem.addEventListener('click', () => {
     navigateTo(menuItem.dataset.name);
   });
 });
-
-const removeBookBtns = document.querySelectorAll('.remove-book');
 
 removeBookBtns.forEach(removeBookBtn => {
   removeBookBtn.addEventListener('click', ()=>{
