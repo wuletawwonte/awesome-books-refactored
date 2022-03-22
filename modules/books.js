@@ -1,27 +1,15 @@
 export default class Books {
   constructor() {
-    if (localStorage.getItem("books") === null) {
-      this.books = [];
-    } else {
-      this.books = JSON.parse(localStorage.getItem("books"));
-    }
+    this.books = JSON.parse(window.localStorage.getItem("books")) || [];
   }
 
   addBook(book) {
     this.books.push(book);
-
     localStorage.setItem("books", JSON.stringify(this.books));
-    console.log(book);
   }
 
   removeBook(bookIndex) {
-    this.books = this.books.filter((item, index) => {
-      if (index !== bookIndex) {
-        return item;
-      }
-      return undefined;
-    });
-
+    this.books = this.books.splice(bookIndex, 1);
     localStorage.setItem("books", JSON.stringify(this.books));
   }
 }
