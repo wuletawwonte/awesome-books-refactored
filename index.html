@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Awesome Books</title>
-  <link rel="stylesheet" href="index.css">
-</head>
-<body>
-  
-  <script src="index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Books</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="main">
+      <header>
+        <nav>
+          <a href="/">Awesome Books</a>
+          <ul>
+            <li class="menu-item" data-name="books-list">List</li>
+            <li class="menu-item" data-name="add-book">Add new</li>
+            <li class="menu-item" data-name="contact">Contact</li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="date"></div>
+
+      <div class="section books-list active">
+        <div class="heading">
+          <h2>All Awesome Books</h2>
+        </div>
+        <div id="books-container"></div>
+      </div>
+
+      <div class="section add-book">
+        <h2>Add a new book</h2>
+        <form method="post" id="add-book">
+          <input type="text" placeholder="Title" id="title" required /><br /><br />
+          <input type="text" placeholder="Author" id="author" required /><br /><br />
+          <button type="submit">Add</button>
+        </form>
+      </div>
+
+      <div class="section contact">
+        <h2>Contact information</h2>
+        <p>Do have any questions or you just want to say "Hello"? You can reach out to us!</p>
+        <ul>
+          <li>Our email: main@mail.com</li>
+          <li>Our phone number: +25148596857</li>
+          <li>Our address: streetname, 2245 City, Country</li>
+        </ul>
+      </div>
+
+      
+    </main>
+    
+    <footer>
+      <p>Copyright - All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="index.js"></script>
+  </body>
 </html>

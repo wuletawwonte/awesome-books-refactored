@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+}
+
+header {
+  border: 3px solid black;
+
+  /* width: 96%; */
+  padding: 10px 20px;
+  align-self: stretch;
+}
+
+h2 {
+  align-self: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+
+  /* gap: 28px; */
+  align-items: center;
+  font-weight: 600;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+nav ul li {
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+nav ul li:nth-child(even) {
+  border-right: 2px black solid;
+  border-left: 2px black solid;
+}
+
+.book-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin: 0 auto;
+}
+
+.book-item:nth-child(odd) {
+  background-color: #dcdcdc;
+}
+
+.main {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+.books-list {
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#books-container {
+  align-self: stretch;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+hr {
+  background-color: black;
+  width: 15%;
+  height: 2px;
+}
+
+.add-book h2 {
+  align-self: center;
+}
+
+form {
+  margin-top: 40px;
+}
+
+form button {
+  float: right;
+  background-color: white;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+.book-item button {
+  background-color: white;
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+form input {
+  border: 2px solid black;
+  width: 50vw;
+  padding: 3px 8px;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  font-weight: 600;
+  align-self: flex-end;
+  padding-right: 10px;
+}
+
+footer {
+  border: 3px black solid;
+  position: absolute;
+  bottom: 10px;
+  padding: 5px 20px;
+  left: 10px;
+  right: 10px;
+  font-weight: 600;
+}
+
+.contact h2 {
+  margin-bottom: 40px;
+}
+
+.contact p {
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.contact ul {
+  font-weight: 600;
+}
+
+.remove-book {
+  cursor: pointer;
+}
+
+.delete-btn {
+  cursor: pointer;
+}
