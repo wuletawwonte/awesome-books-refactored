@@ -160,3 +160,7 @@ footer {
 .remove-book {
   cursor: pointer;
 }
+
+.delete-btn {
+  cursor: pointer;
+}
