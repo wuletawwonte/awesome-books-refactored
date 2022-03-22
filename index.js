@@ -8,6 +8,7 @@ const booksContainer = document.getElementById('books-container');
 const addBookForm = document.getElementById('add-book');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
+const deleteBtns = document.querySelectorAll('.delete-btn');
 
 const allBooks = new Books();
 
@@ -18,12 +19,6 @@ const loadDate = () => {
 };
 
 setInterval(loadDate, 1000);
-
-const removeBook = (bookIndex) => {
-  allBooks.removeBook(bookIndex);
-  reload();
-};
-
 
 function reload() {
   booksContainer.innerHTML = allBooks.books
@@ -67,11 +62,11 @@ menuItems.forEach((menuItem) => {
 
 
 
-const deleteBtns = document.querySelectorAll('.delete-btn');
 
 deleteBtns.forEach(btn => {
   btn.onclick = (e) => {
-    removeBook(e.target.dataset.id);
+    allBooks.removeBook(e.target.dataset.id);
+    reload();
   }
 });
 
