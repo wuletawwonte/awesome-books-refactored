@@ -1,12 +1,14 @@
+import allBooks from "./books.js";
+
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 
-const addBook = (books) => {
+const addBook = () => {
   const newBook = {
     title: title.value,
     author: author.value,
   };
-  books.addBook(newBook);
+  allBooks.addBook(newBook);
   title.value = '';
   author.value = '';
 }

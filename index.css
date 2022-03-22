@@ -156,3 +156,7 @@ footer {
 .contact ul {
   font-weight: 600;
 }
+
+.remove-book {
+  cursor: pointer;
+}

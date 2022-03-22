@@ -1,19 +1,15 @@
 export default class Books {
   constructor() {
-    if (localStorage.getItem('books') === null) {
-      this.books = [];
-    } else {
-      this.books = JSON.parse(localStorage.getItem('books'));
-    }
+    this.books = JSON.parse(localStorage.getItem("books")) || [];
   }
 
-  addBook = (book) => {
+  addBook(book) {
     this.books.push(book);
 
-    localStorage.setItem('books', JSON.stringify(this.books));
+    localStorage.setItem("books", JSON.stringify(this.books));
   }
 
-  removeBook = (bookIndex) => {
+  removeBook(bookIndex) {
     this.books = this.books.filter((item, index) => {
       if (index !== bookIndex) {
         return item;
@@ -21,6 +17,8 @@ export default class Books {
       return undefined;
     });
 
-    localStorage.setItem('books', JSON.stringify(this.books));
+    localStorage.setItem("books", JSON.stringify(this.books));
   }
 }
+
+
