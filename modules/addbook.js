@@ -1,9 +1,8 @@
-import allBooks from "./books.js";
 
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 
-const addBook = () => {
+const addBook = (allBooks) => {
   const newBook = {
     title: title.value,
     author: author.value,

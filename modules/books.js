@@ -1,12 +1,17 @@
 export default class Books {
   constructor() {
-    this.books = JSON.parse(localStorage.getItem("books")) || [];
+    if (localStorage.getItem("books") === null) {
+      this.books = [];
+    } else {
+      this.books = JSON.parse(localStorage.getItem("books"));
+    }
   }
 
   addBook(book) {
     this.books.push(book);
 
     localStorage.setItem("books", JSON.stringify(this.books));
+    console.log(book);
   }
 
   removeBook(bookIndex) {
@@ -20,5 +25,3 @@ export default class Books {
     localStorage.setItem("books", JSON.stringify(this.books));
   }
 }
-
-
