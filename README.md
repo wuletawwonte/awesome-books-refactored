@@ -5,7 +5,8 @@
 
 ## Built With
 
-- HTML, CSS and Javascript
+- Major languages: HTML, CSS and Javascript
+- JS Libraries used: [Luxon](https://www.npmjs.com/package/luxon)
 
 
 ## Getting Started
