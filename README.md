@@ -8,14 +8,10 @@
 - Major languages: HTML, CSS and Javascript
 - JS Libraries used: [Luxon](https://www.npmjs.com/package/luxon)
 
-
-## Getting Started
-
 ## Live Preview
 
-<!-- -This site was built using [GitHub Pages](https://safar1212.github.io/Portfolio/). -->
-
-
+[Link to deployed version](https://wuletawwonte.github.io/awesome-books-refactored/)
+![screenshot](https://user-images.githubusercontent.com/12524453/159860941-9038a6b4-9914-48d2-81b1-a731e1c21e61.png)
 
 ## Authors
 
